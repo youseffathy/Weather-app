@@ -1,10 +1,11 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const chalk = require("chalk");
 const geocode = require("./geocode");
 const forecast = require("./forecast");
 
+//specify heroku port or 3000 for localhost
+const port = process.env.PORT || 3000;
 const app = express();
 //Define paths for express config
 const publicDirPath = path.join(__dirname, "../public");
@@ -97,6 +98,6 @@ app.get("*", (req, res) => {
 });
 
 /* A method to start the server up */
-app.listen(3000, () => {
-  console.log("Server is up at port 3000");
+app.listen(port, () => {
+  console.log("Server is up at port " + port);
 });

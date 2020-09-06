@@ -4,7 +4,7 @@ function delay(URL) {
   setTimeout(function () {
     window.location = URL;
   }, 200);
-}
+} 
 */
 const form = document.querySelector("form");
 
@@ -12,7 +12,8 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = document.querySelector("input").value;
 
-  fetch("http://localhost:3000/weather?location=" + location).then((response) => {
+  //"http://localhost:3000/weather?location=" -> for local host
+  fetch("/weather?location=" + location).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         alert(data.error);
