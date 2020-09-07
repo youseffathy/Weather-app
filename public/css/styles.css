@@ -123,8 +123,8 @@ td {
 th,
 td {
   padding: 15px;
-}
-td,
-th {
   background-color: white;
+}
+th {
+  width: 150px;
 }
